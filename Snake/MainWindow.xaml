@@ -9,9 +9,17 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
-            <RowDefinition Height="9*"/>
+            <RowDefinition Height="12*"/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="ScoreText"/>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Background="LightGray">
+            <StackPanel.Resources>
+                <Style TargetType="TextBlock">
+                    <Setter Property="FontSize" Value="30"/>
+                </Style>
+            </StackPanel.Resources>
+            <TextBlock>Score: </TextBlock>
+            <TextBlock x:Name="ScoreText" Margin="10,0"/>
+        </StackPanel>
         <Canvas Grid.Row="1" x:Name="MainCanvas" Focusable="True" Loaded="MainCanvas_Loaded" KeyDown="MainCanvas_KeyDown"></Canvas>
     </Grid>
 </Window>
